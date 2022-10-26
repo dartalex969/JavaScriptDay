@@ -124,12 +124,13 @@ function func(){
 
 //What will setTimeout show?
 
-let i = 0;
+/*let i = 0;
 
-setTimeout(() => console.log(i),100);
+setTimeout(() => console.log(i),100);// it has displayed 100000000, so which means setTimeout worked
+for(let j = 0; j < 100000000; j++){ // after the block of code had finished.
 
-for(let j = 0; j < 100000000; j++){
   i++;
-}
+}        */                           
+
 
     
