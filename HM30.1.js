@@ -173,7 +173,7 @@ console.log(user.name);//John*/
 
 console.log(user.fullName);*/
 
-let user = {
+/*let user = {
   name: "John",
   surname: "Smith",
 
@@ -189,4 +189,5 @@ user.fullName = "Alice Cooper";
 
 console.log(user.name);
 console.log(user.surname);
-console.log(user);
+console.log(user);*/
+
