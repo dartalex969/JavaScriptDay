@@ -32,7 +32,7 @@
 
   //the task two
 
-  /*class News {
+  class News {
 
     constructor(header, date, text, tags ){
       this.header = header;
@@ -68,7 +68,7 @@
       else if(diff > _24hours && diff < _oneWeek){
 
         this.date = daysAgo;
-        console.log(this.date);
+        //console.log(this.date);
 
         document.write(`<h2>${this.header}</h2><p>${this.date} days ago</p><p>${this.text}</p><p>${this.tags}</p>`,
       `<style>p,h2{width:560px;margin:30px auto;font-family:verdana}</style>`);
@@ -85,61 +85,73 @@
     }
   }
 
-  let news = new News(`What is Lorem Ipsum?`,this.date,`Lorem Ipsum is simply dummy text of the printing and
+   let news = new News(`What is Lorem Ipsum?`,this.date,`Lorem Ipsum is simply dummy text of the printing and
    typesetting industry. Lorem Ipsum has been the industry's standard dummy
    text ever since the 1500s, when an unknown printer took a galley of type
    and scrambled it to make a type specimen book.`,`#lorem #ipsum #text` );
-   news.print();
-   console.log(news);*/
+   let news1 = new News(`Why do people use Lorem Ipsum?`,this.date,`Lorem Ipsum is simply dummy text of the printing and
+   typesetting industry. Lorem Ipsum has been the industry's standard dummy
+   text ever since the 1500s, when an unknown printer took a galley of type
+   and scrambled it to make a type specimen book.`,`#lorem #text` );
+   let news2 = new News(`When was Lorem Ipsum mentioned first?`,this.date,`Lorem Ipsum is simply dummy text of the printing and
+   typesetting industry. Lorem Ipsum has been the industry's standard dummy
+   text ever since the 1500s, when an unknown printer took a galley of type
+   and scrambled it to make a type specimen book.`,`#lorem` );
+   //news.print();
+   //console.log(news);
 
    
    //the third task
 
-   /*class User {
-    name = "John";
+   
+
+   arrNews = [];
   
-    sayHi() {
-      console.log(`Hello, ${this.name}!`);
-    }
-  }
-  
-  new User().sayHi(); // Hello, John!
-  console.log(new User());*/
 
+   class News_line extends News{
 
-   class News_line{
-
-    news = [];
-    count = 0;
     
-
     
     get countNews(){
        let count = 0;
       
-      for(let news of this.news){
+      for(let news of arrNews){
          count++ ;
         
         
       }
       console.log(`There are ${count} pieces of news for now.`);
+      return count;
       
     }
 
     displayAllNews() {
-      for(let news of this.news){
-        console.log(news);
+
+      for(let news of arrNews){
+           news.print();
       }
+        //news.print();
+       // news1.print();
+       // news2.print();
+        //return news.print();
     }
 
     addFreshNews() {
-      
-      return this.news.push('news'+`${(this.count + 1)}`) && ++this.count;
+      if(news){
+         arrNews.push(news) && ++this.count;
+      }
+      if(news1){
+         arrNews.push(news1) && ++this.count;
+      }
+      if(news2){
+         arrNews.push(news2) &&++this.count;
+      }
       
     }
 
     removeOldNews() {
-      return this.news.shift();
+      
+      return arrNews.shift();
     }
 
 
@@ -149,23 +161,24 @@
    let news_line = new News_line();
    
    news_line.addFreshNews();
-   news_line.addFreshNews();
-   news_line.addFreshNews();
-   news_line.addFreshNews();
-   news_line.addFreshNews();
-   news_line.removeOldNews();
-   news_line.removeOldNews();
-   news_line.addFreshNews();
-   news_line.addFreshNews();
-   news_line.addFreshNews();
-   news_line.removeOldNews();
-   news_line.removeOldNews();
+   //news_line.addFreshNews();
+   //news_line.addFreshNews();
+   //news_line.addFreshNews();
+
+
+
+   //news_line.removeOldNews();
+  // news_line.removeOldNews();
+
+   
    news_line.countNews;
   
   
    news_line.displayAllNews();
-   console.log(news_line.news);
-   console.log(news_line.count);
+   console.log(arrNews);
+   console.log(news1)
+   console.log(typeof news);
+   
 
 
    
