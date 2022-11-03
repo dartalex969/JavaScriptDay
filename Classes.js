@@ -36,7 +36,7 @@
 
     constructor(header, date, text, tags ){
       this.header = header;
-      this.date = new Date(2022,9,30,15,30);
+      this.date = new Date(Date.parse(date));
       this.text = text;
       this.tags = tags;
       
@@ -85,101 +85,90 @@
     }
   }
 
-   let news = new News(`What is Lorem Ipsum?`,this.date,`Lorem Ipsum is simply dummy text of the printing and
+   let news = new News(`What is Lorem Ipsum?`,'2022-10-30T15:30',`Lorem Ipsum is simply dummy text of the printing and
    typesetting industry. Lorem Ipsum has been the industry's standard dummy
    text ever since the 1500s, when an unknown printer took a galley of type
    and scrambled it to make a type specimen book.`,`#lorem #ipsum #text` );
-   let news1 = new News(`Why do people use Lorem Ipsum?`,this.date,`Lorem Ipsum is simply dummy text of the printing and
-   typesetting industry. Lorem Ipsum has been the industry's standard dummy
-   text ever since the 1500s, when an unknown printer took a galley of type
-   and scrambled it to make a type specimen book.`,`#lorem #text` );
-   let news2 = new News(`When was Lorem Ipsum mentioned first?`,this.date,`Lorem Ipsum is simply dummy text of the printing and
-   typesetting industry. Lorem Ipsum has been the industry's standard dummy
-   text ever since the 1500s, when an unknown printer took a galley of type
-   and scrambled it to make a type specimen book.`,`#lorem` );
-   //news.print();
+   
+  //news.print();
    //console.log(news);
 
    
-   //the third task
-
    
 
-   arrNews = [];
+   
+//the third task
+   
   
 
-   class News_line extends News{
+   class NewsLine{
 
-    
-    
-    get countNews(){
-       let count = 0;
-      
-      for(let news of arrNews){
-         count++ ;
+    constructor(...someNews){
+      this.someNews = someNews
+    }
+
+       
+    get allNews(){
+       return `There are ${this.someNews.length} pieces of news now.`
         
         
       }
-      console.log(`There are ${count} pieces of news for now.`);
-      return count;
       
-    }
 
     displayAllNews() {
 
-      for(let news of arrNews){
+      for(let news of this.someNews){
            news.print();
       }
-        //news.print();
-       // news1.print();
-       // news2.print();
-        //return news.print();
+        
     }
 
-    addFreshNews() {
-      if(news){
-         arrNews.push(news) && ++this.count;
-      }
-      if(news1){
-         arrNews.push(news1) && ++this.count;
-      }
-      if(news2){
-         arrNews.push(news2) &&++this.count;
-      }
+    addFreshNews(header, date, text, tags) {
+      this.someNews.push(new News(header,date,text,tags))
       
     }
 
     removeOldNews() {
       
-      return arrNews.shift();
+      this.someNews.shift();
     }
 
+    sortByDate(){
+      
+      return this.someNews.sort((a,b) => b.date - a.date);
+    }
+    
+    searchByTag(tag){
+      return this.someNews.filter((someNews) => someNews.tags.includes(tag));
+    }
 
 
    }
 
-   let news_line = new News_line();
+   let newsLine = new NewsLine();
+       
    
-   news_line.addFreshNews();
-   //news_line.addFreshNews();
-   //news_line.addFreshNews();
-   //news_line.addFreshNews();
+    
+   newsLine.addFreshNews(`What is Lorem Ipsum?`,'2022-10-30T15:30',`Lorem Ipsum is simply dummy text of the printing and
+   typesetting industry. Lorem Ipsum has been the industry's standard dummy
+   text ever since the 1500s, when an unknown printer took a galley of type
+   and scrambled it to make a type specimen book.`,`#lorem`); 
+   newsLine.addFreshNews(`Why do people use Lorem Ipsum?`,'2022-10-28T15:30',`Lorem Ipsum is simply dummy text of the printing and
+   typesetting industry. Lorem Ipsum has been the industry's standard dummy
+   text ever since the 1500s, when an unknown printer took a galley of type
+   and scrambled it to make a type specimen book.`,` #ipsum ` );
+   newsLine.addFreshNews(`When was Lorem Ipsum mentioned first?`,'2022-09-23T17:30',`Lorem Ipsum is simply dummy text of the printing and
+   typesetting industry. Lorem Ipsum has been the industry's standard dummy
+   text ever since the 1500s, when an unknown printer took a galley of type
+   and scrambled it to make a type specimen book.`,`#text` );  
 
-
-
-   //news_line.removeOldNews();
-  // news_line.removeOldNews();
-
+   newsLine.displayAllNews();
+   console.log(newsLine);
+   console.log(newsLine.allNews); 
    
-   news_line.countNews;
-  
-  
-   news_line.displayAllNews();
-   console.log(arrNews);
-   console.log(news1)
-   console.log(typeof news);
+   console.log(newsLine.sortByDate());
+   console.log(newsLine.searchByTag('#ipsum'));
    
-
-
+   
    
    
