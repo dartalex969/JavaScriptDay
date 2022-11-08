@@ -101,7 +101,7 @@
 
   //the second task
 
-  /*class HtmlElement {
+  class HtmlElement {
     constructor(tagName,closed){
       this.tagName = tagName;
       this.closed = closed;
@@ -201,7 +201,7 @@
 // this.insideTags[i].getHtml()  if 'START'
 // {textContent} 
 // this.insideTags[i].getHtml()  if 'END'
-// ?{closed}</{tagName}>'*/
+// ?{closed}</{tagName}>'
 
 //the third task
 
@@ -211,6 +211,7 @@ class CssClass {
   }
 
   _styles = []
+  
   get styles(){
     return this._styles;
     
@@ -240,11 +241,30 @@ class CssClass {
   }
    
 
-let div = new CssClass('div');
+let div1 = new CssClass('div');
 div.styles = [['background', 'blue'], ['width','100px'], ['height', '100px'], ['color', 'green']];
 
-console.log(div._styles);
-console.log(div);
-div.removeStyle(1,1);
-console.log(div.styles);
-console.log(div.getCss());
+console.log(div1._styles);
+console.log(div1);
+div1.removeStyle(1,1);
+console.log(div1.styles);
+console.log(div1.getCss());
+
+//the fourth task
+
+class HtmlBlock {
+  constructor(){
+    this.css = new CssClass('');
+    this.html = new HtmlElement('');
+  }
+
+  getCode(content){
+    document.write(`<${this.html}>${content}</${this.html}>,<style>${this.html}{${this.css}}</style>`);
+
+  }
+}
+let htmlBlock = new HtmlBlock();
+htmlBlock.css = 'width:560px;color:blue;margin:30px auto;font-family:verdana';
+htmlBlock.html = 'h1';
+console.log(htmlBlock);
+htmlBlock.getCode('Hey, how is it going? Truth be told, I have no idea how to do this task.');
