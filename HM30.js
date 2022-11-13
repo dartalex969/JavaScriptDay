@@ -90,7 +90,7 @@ function func(){
 
   //using setInterval
 
-  /*function printNumbers(from, to){
+  function printNumbers(from, to){
     let current = from;
 
     let timerId = setInterval(function(){
@@ -99,9 +99,9 @@ function func(){
         clearInterval(timerId);
       }
       current++;
-    }, 1000);
+    }, 200);
   }
-  printNumbers(0,15);*/
+  printNumbers(0,15);
 
   
   //using setTimeout
