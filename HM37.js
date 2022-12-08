@@ -165,7 +165,7 @@ position: relative;
  
 //the fifth task
 
-let listOfBooks = document.createElement('ol');
+
 
 
 
