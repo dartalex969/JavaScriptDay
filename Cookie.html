@@ -6,8 +6,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="./Cookie.js"></script>
     <title>Cookie</title>
+    <style>
+        body {
+            background-color: rgb(245, 235, 223);
+            font-family: Arial, Helvetica, sans-serif;
+            height: 1000px;
+        }
+        
+        .container{
+            display: grid;
+            grid-template-columns: repeat(3, 33.3%);
+            height: 350px;
+            justify-content: center;
+            align-items: center;
+        }
+        .header{
+            text-align: center;
+            grid-column: 2;
+        }
+        form {
+            grid-column: 2;
+            
+            
+        }
+        #color, #code{
+            width: 300px;
+            margin:0 0 8px 110px;
+            
+        }
+        #colortype, #submit{
+            width: 310px;
+            margin:0 0 8px 110px;
+            
+        }
+        label{
+            margin:0 0 8px 110px;
+        }
+        
+        
+    </style>
 </head>
 <body>
+    <div class="container">
+        
+        <form >
+            <div class="header">
+                <h3>Create new color</h3>
+            </div>
+            <label for="color">Color:</label><br>
+            <input type="text" id="color" required><br>
+            <label for="type">Type:</label><br>
+            <select id="colortype" name="colortype">
+                <option value="rgb">RGB</option>
+                <option value="rgba">RGBA</option>
+                <option value="hex">HEX</option>
+            </select><br>
+            <label for="code">Code:</label><br>
+            <input type="text" id="code"><br>
+            <input type="button" id="submit" value="Save" onclick="colorField()">
+        </form>
     
+    
+       
+
+    </div>
+    
+
+
+   
+
 </body>
 </html>
