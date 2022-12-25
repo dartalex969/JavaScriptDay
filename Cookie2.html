@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./Cookie2.js" defer></script>
+    <title>Cookie task#2</title>
+    <style>
+        *{margin: 0px; padding: 0px; box-sizing: border-box;}
+.container{
+    width: 1000px;
+    margin: 0 auto;
+    background-color: blanchedalmond;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.title{
+    width: 100%;
+    border-bottom: 1px solid silver;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.header{
+    width: 100%;
+    height: 100px;
+    display: flex;
+}
+.headerLeft{
+    width: 60%;
+    height: 100%;
+    display: flex;
+
+}
+.headerRight{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.headerBlock{
+    width: 25%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.cubeElem{
+    width: 50px;
+    height: 50px;
+    background-color: silver;
+}
+.circleElem{
+    width: 50px;
+    height: 50px;
+    background-color: silver;
+    border-radius: 50%;
+}
+.rhombusElem{
+    width: 50px;
+    height: 50px;
+    background-color: silver;
+    transform: rotate(45deg);
+}
+.triangle-right {
+    width: 0;
+    height: 0;
+    border-top: 25px solid transparent;
+    border-left: 50px solid silver;
+    border-bottom: 25px solid transparent;
+}
+.colorWrapper{
+    width: 245px;
+    height: 68px;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 5px;
+    row-gap: 5px ;
+}
+.color{
+    width: 30px;
+    height: 30px;
+}
+.paintWrapper{
+    width: 100%;
+    height: 500px;
+    border: 1px solid silver;
+    margin-top: 20px;
+    overflow: hidden !important;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+        <h2 style="margin-top: 20px;margin-bottom: 20px;">PAINT </h2>
+        </div>
+        <div class="header">
+            <div class="headerLeft">
+                <div class="cube headerBlock">
+                    <input type="radio" id="figure" value="cube" name="ChangeColor">
+                    <div class="cubeElem"></div>
+                </div>
+                <div class="sircle headerBlock">
+                    <input type="radio"name="ChangeColor" id="figure" value="circle">
+                    <div class="circleElem"></div>
+
+                </div>
+                <div class="rhombus headerBlock">
+                    <input type="radio" id="figure" value="rhombus" name="ChangeColor">
+                    <div class="rhombusElem"></div>
+
+                </div>
+                <div class="triangle headerBlock">
+                    <input type="radio" id="figure" value="triangle" name="ChangeColor">
+                    <div class="triangle-right"></div>
+                </div>
+            </div>
+            <div class="headerRight">
+                <div class="colorWrapper">
+                    <div class="color" data-="aqua" style="background-color: aqua;"></div>
+                    <div class="color" data-="blue" style="background-color: blue;"></div>
+                    <div class="color" data-="red" style="background-color: red;"></div>
+                    <div class="color" data-="yellow" style="background-color: yellow;"></div>
+                    <div class="color" data-="000000" style="background-color: #000000;"></div>
+                    <div class="color" data-="rebeccapurple" style="background-color:rebeccapurple;"></div>
+                    <div class="color" data-="goldenrod" style="background-color: goldenrod;"></div>
+                    <div class="color" data-="rosybrown" style="background-color: rosybrown;"></div>
+                    <div class="color" data-="white" style="background-color: white;"></div>
+                    <div class="color" data-="silver" style="background-color: silver;"></div>
+                    <div class="color" data-="burlywood" style="background-color: burlywood;"></div>
+                    <div class="color" data-="fuchsia" style="background-color: fuchsia;"></div>
+                    <div class="color" data-="skyblue" style="background-color: skyblue;"></div>
+                    <div class="color" data-="lightcoral" style="background-color: lightcoral;"></div>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="paintWrapper">
+        
+        </div>
+    </div>
+</body>
+</html>

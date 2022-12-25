@@ -53,7 +53,7 @@
             <div class="header">
                 <h3>Create new color</h3>
             </div>
-            <label for="color">Color:</label><br>
+            <label for="color">Color:</label><span id="colorError"></span><br>
             <input type="text" id="color" required><br>
             <label for="type">Type:</label><br>
             <select id="colortype">
@@ -61,7 +61,7 @@
                 <option value="RGBA">RGBA</option>
                 <option value="HEX">HEX</option>
             </select><br>
-            <label for="code">Code:</label><br>
+            <label for="code">Code:</label><div id="codeError"></div>
             <input type="text" id="code" placeholder="0-255,0-255,0-255" required><br>
             <button id="submit">Save</button>
         </form>
